@@ -10,6 +10,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Apercu';
+    src: url('/assets/fonts/apercu-regular.woff') format('woff'),
+      url('/assets/fonts/apercu-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*-------------------------------------------*/
 /* BASIC SETUP */
 /*-------------------------------------------*/
@@ -45,7 +53,7 @@ h6 {
 h1 {
     font-size: 390%;
     line-height: 125%;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 h6 {
@@ -67,6 +75,7 @@ section {
 
 .container {
     display: flex;
+    flex-direction: column;
     width: 80%;
     height: 100%;
     max-width: 1800px;
@@ -89,7 +98,6 @@ section {
     right: -7vw;
 }
 
-
 .text-center {
     text-align: center!important;
 }
@@ -98,33 +106,19 @@ section {
 /* HEADER */
 /*-------------------------------------------*/
 
-
-/* 
-.main-nav {
-    position: static;
-    left: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    width: 80%;
-    height: 66px;
-    max-width: 1800px;
-    margin-top: 0;
-    justify-content: space-between;
-    align-items: center;
-
-} */
-
 .main-nav {
     float: right;
     list-style: none;
     margin-top: 55px;
     max-width: 1800px;
     display: flex;
+    font-family: 'Apercu';
+    font-size: 80%;
+
 }
-  
+
 .main-nav li {
+    margin-bottom: 10px;
     display: inline-block;
     margin-right: 58px;
     text-decoration: none;
@@ -132,9 +126,86 @@ section {
 
 .main-nav li a {
     text-decoration: none;
+    color: #000;
 }
 
-.main-nav-logo {
-    display: flex;
-    margin-left: 0;
+.main-nav li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width .3s;
 }
+
+.main-nav li:hover::after {
+    width: 100%;
+}
+
+.navbar-logo {
+    margin-left: 50px;
+    margin-top: 50px;
+    width: 5%;
+}
+
+.intro {
+    display: block;
+    color: #d8b4a0;
+    font-size: 120%;
+    font-family: 'Apercu';
+
+}
+
+.hero-section {
+    padding: 100px;
+}
+
+/*-------------------------------------------*/
+/* MEDIA QUERIES */
+/*-------------------------------------------*/
+
+/* @media (min-width: 478px) {
+
+    .hero-section {
+        padding: 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 180%;
+        line-height: 140%;
+    }
+
+    .intro {
+        font-size: 100%;
+    }
+
+    .main-nav {
+        margin-bottom: 50px;
+    }
+
+}   */
+
+@media (min-width: 600px) {
+
+    .hero-section h1 {
+        font-size: 290%;
+        line-height: 140%;
+    }
+
+}  
+
+@media (min-width: 767px) {
+
+    .hero-section h1 {
+        font-size: 360%;
+        line-height: 130%;
+    }
+} 
+
+@media (min-width: 1200px) {
+
+    .hero-section h1 {
+        font-size: 390%;
+        line-height: 130%;
+    }
+} 
