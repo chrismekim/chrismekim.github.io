@@ -25,13 +25,6 @@
     font-style: normal;
 }
 
-/* @font-face {
-    font-family: 'Canela Italic';
-    src: url('/assets/fonts/Canela-LightItalic.woff') format('woff'),
-      url('/assets/fonts/Canela-LightItalic.woff2') format('woff2');
-    font-weight: normal;
-    font-style: italic;
-} */
 @font-face {
     font-family: 'Orpheus Italic';
     src: url('/assets/fonts/OrpheusProItalic.woff') format('woff'),
