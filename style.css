@@ -9,6 +9,36 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Orpheus';
+    src: url('/assets/fonts/OrpheusPro.woff') format('woff'),
+      url('/assets/fonts/OrpheusPro.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maison Neue Mono';
+    src: url('/assets/fonts/MaisonNeue-Mono.woff') format('woff'),
+      url('/assets/fonts/MaisonNeue-Mono.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* @font-face {
+    font-family: 'Canela Italic';
+    src: url('/assets/fonts/Canela-LightItalic.woff') format('woff'),
+      url('/assets/fonts/Canela-LightItalic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+} */
+@font-face {
+    font-family: 'Orpheus Italic';
+    src: url('/assets/fonts/OrpheusProItalic.woff') format('woff'),
+      url('/assets/fonts/OrpheusProItalic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
 
 @font-face {
     font-family: 'Apercu';
@@ -23,18 +53,29 @@
 /*-------------------------------------------*/
 
 
+  
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-  
-html {
+    /* background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important; */
+} 
+
+html, body {
     color: #000;
-    background-color: #F6F3F1;
+    /* background-color: #F6F3F1; */
+    background-color: #fbf2ec;
     font-family: 'Canela';
     font-size: 20px;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden; 
+}
+
+em {
+    font-family: 'Orpheus Italic';
+
 }
 
 h1,
@@ -56,50 +97,198 @@ h1 {
     margin-top: 10px;
 }
 
+h2 {
+    
+    font-size: 250%;
+    line-height: 125%;
+}
+
 h6 {
-    font-size: 70%;
+    font-size: 100%;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+
+/*-------------------------------------------*/
+/* BUTTONS */
+/*-------------------------------------------*/
+
+.more-button {
+    font-family: 'Apercu';
+    text-decoration: none;
+}
+
+
+.more-button a {
+    font-family: 'Apercu';
+    text-decoration: none;
+    color: #000!important;
+}
+
+.medium-btn {
+    padding: 21px 34px;
+    font-family: 'Apercu',Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    color: #fff;
+    background-color: #2b3130;
+    border-color: #2b3130;
+}
+.medium-btn:hover {
+    padding: 21px 34px;
+    color: #fff;
+    background-color: #949494;
+    transition: background-color 300ms ease-in;
 }
 
 /*-------------------------------------------*/
 /* REUSABLE COMPONENTS */
 /*-------------------------------------------*/
 
-.row {
-    max-width: 1800px;
-    margin: 0 auto;
-}
-  
-section {
-    padding: 100px 0;
-}
-
 .container {
     display: flex;
-    flex-direction: column;
-    width: 80%;
     height: 100%;
     max-width: 1800px;
     margin: 0 auto;
 }
 
-.section-text-left {
-    
-    transform: rotate(-90deg);
-    position: absolute;
-    top: 55vw;
-    left: -7vw;
+.left {
+    float: left!important;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
 }
 
 .section-text-right {
 
-    transform: rotate(90deg);
     position: absolute;
-    top: 55vw;
-    right: -7vw;
+    right: 0vw;
+    transform: perspective(1px) translateY(-50%) rotate(90deg);
+    text-align: center;
+} 
+
+.section-text-left {
+    
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 40vw;
+    left: -13vw;
+    font-family: 'Apercu';
+    font-size: 60%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
+
 
 .text-center {
     text-align: center!important;
+}
+
+.section-title
+ {
+    font-size: 300%;
+    text-align: center;
+}
+
+.flex-grid {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    /* align-items: center; */
+}
+
+.flex-column {
+    flex: 2;
+}
+
+.section-subtitle {
+    font-size: 220%;
+    margin-bottom: 30px;
+}
+
+.projects-section p, .in-progress-section p {
+    font-family: 'Apercu';
+    font-size: 105%;
+    line-height: 150%;
+    margin-bottom: 18px;
+
+}
+
+.two-column {
+    display: flex;
+    flex-direction: row;
+}
+
+.col-left {
+    flex: 1;
+    padding: 40px;
+}
+
+.col-right {
+    flex: 2;
+    padding: 40px;
+}
+
+.section-text {
+    width: 60%;
+}
+
+.section-technologies {
+    font-family:'Maison Neue Mono';
+    color: #d8b4a0;
+    font-size: 80%;
+    line-height: 155%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.object-fit {
+    object-fit: cover;
+}
+
+
+.top-button {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    z-index: 2000;
+    display: none;
+}
+
+.top-button a {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+hr {
+    margin-top: 5%;
+    margin-bottom: 6%;
+    border-width: 0;
+    border-top: 2px solid #000;
+    width: 40px;
+    text-align: left;
+    margin-left: 0;
 }
 
 /*-------------------------------------------*/
@@ -158,54 +347,658 @@ section {
 
 .hero-section {
     padding: 100px;
+    max-width: none;
+    height: 90vh;
+    overflow: hidden;
 }
 
+.hero-section a {
+    margin-top: 3%;
+    color: #000;
+}
+
+.hero-section a:hover {
+    font-weight: 1000;
+    color: #d8b4a0;
+
+}
+
+.welcome-badge {
+    width: 175px;
+    position: absolute;
+    right: -65px;
+    top: 475px;
+    -webkit-animation: spin 22s linear infinite;
+    -moz-animation: spin 22s linear infinite;
+    animation: spin 22s linear infinite;
+
+}
+
+@keyframes spin {
+	0% {
+		transform: rotateZ(0);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+
+.scroll-down {
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 1;
+    text-align: center;
+}
+
+.scroll-decoration {
+    position: relative;
+    margin: 0 auto;
+    width: 1px;
+    height: 45px;
+    background: #000;
+}
+
+.scroll-down p {
+    font-size: 65%;
+}
+
+/* .hero-section-decoration {
+    position: absolute;
+    right: 0;
+    top: 45%;
+    margin-top: -50px;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+} */
+
+.hero-section-decoration {
+    position: absolute;
+    /* top: 50%; */
+    top: 43%;
+    right: 0vw;
+    transform: perspective(1px) translateY(-50%) rotate(90deg);
+    text-align: center;
+}
+
+.decoration-text {
+    font-size: 70%;
+    font-family: 'Canela';
+    letter-spacing: .2px;
+    color: #000;
+}
+
+/* .decoration-text {
+    font-size: 70%;
+    letter-spacing: .2px;
+    color: #000;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform-origin: left top 0;
+    -ms-transform-origin: left top 0;
+    transform-origin: left top 0;
+} */
+
+/*-------------------------------------------*/
+/* ABOUT */
+/*-------------------------------------------*/
+
+.about-section {
+    display: flex;
+    height: 594px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px;
+    flex: 0 auto;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.section-container {
+    position: relative;
+    display: flex;
+    width: 48.78%;
+    font-size: 140%;
+        overflow: hidden;
+
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+/*-------------------------------------------*/
+/* TECHNOLOGIES */
+/*-------------------------------------------*/
+
+.technologies-section {
+    /* height: 594px; */
+    padding: 50px;
+    background-color: #212121;
+    display: flex;
+    flex-direction: column;
+}
+/* .tech-list {
+    margin: 0 auto;
+} */
+
+.technologies-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+/* .technologies-list ul {
+    padding: 45px;
+} */
+
+.technologies-section li {
+    color: #d3d3d3;
+    font-family: 'Maison Neue Mono';
+    list-style: none;
+    font-size: 60%;
+    line-height: 220%;
+}
+
+.technologies-section .section-title {
+    color: #d3d3d3;
+}
+
+.technologies-section .flex-grid {
+    margin-top: 30px;
+}
+/*-------------------------------------------*/
+/* PROJECTS */
+/*-------------------------------------------*/
+
+.projects-section, .in-progress-section {
+
+    height: 950px;
+    padding: 50px;
+    min-width: auto;
+}
+
+.projects-section {
+    /* background-color: rgb(255, 251, 251); */
+    background-color: #fbf2ec;
+}
+
+.in-progress-section {
+    background-color: #e6e3e1;
+}
+
+.section-content {
+    padding: 5%;
+}
+
+.section-content a {
+    color: #000;
+}
+
+.section-content a:hover {
+    font-weight: 1000;
+    color: #d8b4a0;
+
+}
+/*-------------------------------------------*/
+/* ABOUT PAGE */
+/*-------------------------------------------*/
+
+.about-hero-section {
+    /* display: flex; */
+    /* flex-direction: column; */
+    padding: 8%;
+    width: 80%;
+}
+
+.about-title {
+    font-size: 155%;
+    font-family: 'Apercu';
+}
+
+.about-description {
+    font-family: 'Canela';
+    font-size: 175%;
+    line-height: 155%;
+}
+
+/* .about-image {
+    width: 23%;
+} */
+
+/*-------------------------------------------*/
+/* FOOTER */
+/*-------------------------------------------*/
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+    background-color: #d8b4a0;
+    width: 100%;
+}
+
+.credits {
+    font-family: 'Apercu';
+    font-size: 90%;
+    font-weight: 300;
+    color: #fff;
+}
+
+.footer li {
+    font-size: 145%;
+    list-style: none;
+    margin-bottom: 2%;
+}
+
+.footer li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.footer li a:hover {
+    color: #000;
+}
+
+.footer-subtitle {
+    font-family: 'Apercu';
+    margin-bottom: 30px;
+
+}
 /*-------------------------------------------*/
 /* MEDIA QUERIES */
 /*-------------------------------------------*/
 
-/* @media (min-width: 478px) {
+@media (min-width: 360px) {
 
+    .navbar-logo {
+        width: 13%;
+    }
     .hero-section {
-        padding: 20px;
+        padding: 10%;
+        margin-top: 22%;
+        height: 65vh;
+        overflow: hidden;
     }
 
-    .hero-section h1 {
-        font-size: 180%;
-        line-height: 140%;
+    .hero-section h1,
+    .section-title {
+        font-size: 170%;
+        line-height: 145%;
+    }
+
+    .section-title {
+        margin-top: 30px;
     }
 
     .intro {
         font-size: 100%;
     }
 
+    /* .welcome-badge {
+        width: 110px;
+        position: absolute;
+        right: 20px;
+        top: inherit;
+        left: inherit;
+        bottom: -230px;
+    } */
+
+    .technologies-section li {
+        color: #d3d3d3;
+        font-family: 'Maison Neue Mono';
+        list-style: none;
+        font-size: 60%;
+        line-height: 220%;
+    }
+    
+    .technologies-section {
+        height: 590px;
+    }
+
+    .flex-grid {
+        display: block;
+    }
+
+
+    .section-subtitle {
+        font-size: 150%;
+    }
+
+    .section-text {
+        width: 100%;
+    }
+
+    .projects-section, .in-progress-section, .technologies-section {
+        padding: 20px;
+    }
+
+    .projects-section p, .in-progress-section p {
+        font-size: 85%;
+    }
+
+    .about-description {
+        font-family: 'Canela';
+        font-size: 120%;
+        line-height: 155%;
+    }
+
+    .about-hero-section {
+        
+        padding-top: 150px;
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 100%;
+        font-size: 100%;
+    }
+
+    .section-content {
+        padding-bottom: 5%;
+    }
+
+    .scroll-down {
+        /* bottom: 130px; */
+        bottom: 1;
+    }
+
+    .scroll-down p {
+        font-size: 60%;
+    }
+
+    .decoration-text {
+        display: none;
+    }
+
+    .footer li a {
+        font-size: 70%;
+        line-height: 145%;
+    }
+
+    .footer {
+        padding: 4%;
+    }
+}  
+
+@media (min-width: 478px) {
+
+
+    .navbar-logo {
+        width: 8%;
+    }
+
+    .hero-section {
+        padding: 8%;
+        margin-top: 125px;
+        height: 65vh;
+    }
+
+    .hero-section h1,
+    .section-title {
+        font-size: 180%;
+        line-height: 135%;
+    }
+
+    .intro {
+        font-size: 120%;
+    }
+
     .main-nav {
         margin-bottom: 50px;
     }
 
-}   */
+    .flex-grid {
+        display: block;
+    }
+
+    .about-description {
+        font-family: 'Canela';
+        font-size: 120%;
+        line-height: 155%;
+    }
+
+        
+    .technologies-section {
+        height: 580px;
+    }
+
+    .footer {
+        padding: 4%;
+    }
+}  
 
 @media (min-width: 600px) {
 
-    .hero-section h1 {
-        font-size: 290%;
-        line-height: 140%;
+    .hero-section {
+        padding: 8%;
+        margin-top: 120px;
+        height: 80vh;
+    }
+    .hero-section h1,
+    .section-title {
+        font-size: 260%;
+        line-height: 135%;
     }
 
+    .flex-grid {
+        display: block;
+    }
+
+
+
+    /* .technologies-section li {
+        font-size: 140%;
+        line-height: 170%;
+    } */
+
+        
+    .technologies-section {
+        width: 100%;
+    }
+
+    .about-description {
+        font-family: 'Canela';
+        font-size: 160%;
+        line-height: 155%;
+    }
+
+
+    .about-hero-section {
+        
+        padding-top: 150px;
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 100%;
+        font-size: 100%;
+    }
+
+    .decoration-text {
+        display: block;
+    }
+
+    .footer li a {
+        font-size: 100%;
+        line-height: 150%;
+    }
+
+    .footer {
+        padding: 5%;
+    }
 }  
+
 
 @media (min-width: 767px) {
 
-    .hero-section h1 {
-        font-size: 360%;
-        line-height: 130%;
+
+    .navbar-logo {
+        width: 6%;
     }
+
+    .hero-section {
+        padding: 5%;
+        margin-top: 50px;
+        height: 68vh;
+    }
+
+    .hero-section h1 {
+        font-size: 280%;
+        line-height: 135%;
+    }
+
+    .section-title {
+        font-size: 280%;
+        line-height: 135%;
+    }
+
+    /* .technologies-section li {
+        font-size: 140%;
+        line-height: 175%;
+    } */
+
+    .technologies-section li {
+        
+        font-family: 'Maison Neue Mono';
+        font-size: 60%;
+        line-height: 220%;
+    }
+    
+ 
+    .technologies-section {
+        height: 400px;
+        width: 100%;
+    } 
+
+    .flex-grid {
+        display: flex;
+    }
+
+    .section-text {
+        width: 75%;
+    }
+
+    .section-subtitle {
+        font-size: 185%;
+    }
+
+    .projects-section p, .in-progress-section p {
+        font-size: 100%;
+        line-height: 155%;
+    }
+
+    .project-section {
+        height: 900px;
+    }
+
+    .about-description {
+        font-family: 'Canela';
+        font-size: 170%;
+        line-height: 155%;
+    }
+
 } 
 
 @media (min-width: 1200px) {
 
+
+    .navbar-logo {
+        width: 5%;
+    }
+
+    .section-text-left {
+        top: 45vw;
+        left: 0vw;
+    }
+    
+    .hero-section {
+        padding: 5%;
+        margin-top: 30px;
+        height: 70vh;
+    }
+
+
     .hero-section h1 {
-        font-size: 390%;
+        font-size: 330%;
         line-height: 130%;
+    }
+
+    .flex-grid {
+        display: flex;
+    }
+
+    /* .technologies-section li {
+        font-size: 160%;
+        line-height: 160%;
+    } */
+
+    .technologies-section li {
+        
+        font-family: 'Maison Neue Mono';
+        font-size: 60%;
+        line-height: 220%;
+    }
+
+    .technologies-section {
+        height: 450px;
+    }
+
+    .section-subtitle {
+        font-size: 220%;
+        margin-bottom: 30px;
+    }
+
+    .section-text {
+        width: 60%;
+    }
+
+    .projects-section, .in-progress-section, .technologies-section {
+        padding: 2%;
+    }
+
+    .projects-section p, .in-progress-section p {
+        font-size: 105%;
+        line-height: 150%;
+    }
+
+    .project-section {
+        height: 1000px;
+    }
+
+    .about-description {
+        font-family: 'Canela';
+        font-size: 175%;
+        line-height: 155%;
+    }
+
+    .section-content {
+        padding: 5%;
+    }
+
+    .about-hero-section {
+        
+        padding-top: 120px;
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 80%;
+    }
+
+    .project-section {
+        height: 900px;
+    }
+
+    .footer li a {
+        line-height: 160%;
+    }
+
+    .footer {
+        padding: 4%;
     }
 } 
