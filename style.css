@@ -41,34 +41,8 @@
     font-style: normal;
 }
 
-/*-------------------------------------------*/
-/* BASIC SETUP */
-/*-------------------------------------------*/
-
-
-  
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* background: #000 !important;
-    color: #0f0 !important;
-    outline: solid #f00 1px !important; */
-} 
-
-html, body {
-    color: #000;
-    /* background-color: #F6F3F1; */
-    background-color: #fbf2ec;
-    font-family: 'Canela';
-    font-size: 20px;
-    text-rendering: optimizeLegibility;
-    overflow-x: hidden; 
-}
-
 em {
     font-family: 'Orpheus Italic';
-
 }
 
 h1,
@@ -91,7 +65,6 @@ h1 {
 }
 
 h2 {
-    
     font-size: 250%;
     line-height: 125%;
 }
@@ -104,21 +77,42 @@ a {
     text-decoration: none!important;
 }
 
+/*-------------------------------------------*/
+/* GLOBAL */
+/*-------------------------------------------*/
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+html, body {
+    color: #000;
+    background-color: #fbf2ec;
+    font-family: 'Canela';
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden; 
+}
+
+.site-padding-x {
+    padding: 5%; 
+}
 
 /*-------------------------------------------*/
 /* BUTTONS */
 /*-------------------------------------------*/
 
-.more-button {
+.primary-button {
     font-family: 'Apercu';
-    text-decoration: none;
+    color:  #000000;
+    transition: all 0.2s cubic-bezier(0.15, 0.85, 0.45, 1);
 }
 
-
-.more-button a {
-    font-family: 'Apercu';
-    text-decoration: none;
-    color: #000!important;
+.primary-button:hover {
+    transform: translateX(0.25rem);
+    color: #d8b4a0;
 }
 
 .medium-btn {
@@ -142,7 +136,7 @@ a {
 }
 
 /*-------------------------------------------*/
-/* REUSABLE COMPONENTS */
+/* COMPONENTS */
 /*-------------------------------------------*/
 
 .container {
@@ -165,7 +159,6 @@ a {
 }
 
 .section-text-right {
-
     position: absolute;
     right: 0vw;
     transform: perspective(1px) translateY(-50%) rotate(90deg);
@@ -173,7 +166,6 @@ a {
 } 
 
 .section-text-left {
-    
     transform: rotate(-90deg);
     position: absolute;
     top: 40vw;
@@ -200,7 +192,6 @@ a {
     justify-content: space-around;
     width: 80%;
     margin: 0 auto;
-    /* align-items: center; */
 }
 
 .flex-column {
@@ -217,7 +208,6 @@ a {
     font-size: 105%;
     line-height: 150%;
     margin-bottom: 18px;
-
 }
 
 .two-column {
@@ -258,7 +248,6 @@ img {
 .object-fit {
     object-fit: cover;
 }
-
 
 .top-button {
     position: fixed;
@@ -335,7 +324,6 @@ hr {
     color: #d8b4a0;
     font-size: 120%;
     font-family: 'Apercu';
-
 }
 
 .hero-section {
@@ -343,6 +331,7 @@ hr {
     max-width: none;
     height: 90vh;
     overflow: hidden;
+    position: relative;
 }
 
 .hero-section a {
@@ -385,12 +374,11 @@ hr {
     -o-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    bottom: 1;
+    bottom: 0;
     text-align: center;
 }
 
 .scroll-decoration {
-    position: relative;
     margin: 0 auto;
     width: 1px;
     height: 45px;
@@ -401,22 +389,8 @@ hr {
     font-size: 65%;
 }
 
-/* .hero-section-decoration {
-    position: absolute;
-    right: 0;
-    top: 45%;
-    margin-top: -50px;
-    -moz-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    text-align: center;
-} */
-
 .hero-section-decoration {
     position: absolute;
-    /* top: 50%; */
     top: 43%;
     right: 0vw;
     transform: perspective(1px) translateY(-50%) rotate(90deg);
@@ -429,18 +403,6 @@ hr {
     letter-spacing: .2px;
     color: #000;
 }
-
-/* .decoration-text {
-    font-size: 70%;
-    letter-spacing: .2px;
-    color: #000;
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    -webkit-transform-origin: left top 0;
-    -ms-transform-origin: left top 0;
-    transform-origin: left top 0;
-} */
 
 /*-------------------------------------------*/
 /* ABOUT */
@@ -462,8 +424,7 @@ hr {
     display: flex;
     width: 48.78%;
     font-size: 140%;
-        overflow: hidden;
-
+    overflow: hidden;
 }
 
 .section-title {
@@ -475,25 +436,17 @@ hr {
 /*-------------------------------------------*/
 
 .technologies-section {
-    /* height: 594px; */
-    padding: 50px;
     background-color: #212121;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
-/* .tech-list {
-    margin: 0 auto;
-} */
 
 .technologies-list {
     display: flex;
     flex-direction: row;
     justify-content: left;
 }
-
-/* .technologies-list ul {
-    padding: 45px;
-} */
 
 .technologies-section li {
     color: #d3d3d3;
@@ -510,19 +463,16 @@ hr {
 .technologies-section .flex-grid {
     margin-top: 30px;
 }
+
 /*-------------------------------------------*/
 /* PROJECTS */
 /*-------------------------------------------*/
 
 .projects-section, .in-progress-section {
-
-    height: 1300px;
-    padding: 50px;
     min-width: auto;
 }
 
 .projects-section {
-    /* background-color: rgb(255, 251, 251); */
     background-color: #fbf2ec;
 }
 
@@ -534,22 +484,11 @@ hr {
     padding: 5%;
 }
 
-.section-content a {
-    color: #000;
-}
-
-.section-content a:hover {
-    font-weight: 1000;
-    color: #d8b4a0;
-
-}
 /*-------------------------------------------*/
 /* ABOUT PAGE */
 /*-------------------------------------------*/
 
 .about-hero-section {
-    /* display: flex; */
-    /* flex-direction: column; */
     padding: 8%;
     width: 80%;
 }
@@ -564,10 +503,6 @@ hr {
     font-size: 175%;
     line-height: 155%;
 }
-
-/* .about-image {
-    width: 23%;
-} */
 
 /*-------------------------------------------*/
 /* FOOTER */
@@ -595,12 +530,13 @@ hr {
 }
 
 .footer li a {
+    transition: all 0.2s cubic-bezier(0.15, 0.85, 0.45, 1);
     text-decoration: none;
     color: #000;
 }
 
 .footer li a:hover {
-    color: #000;
+    color: rgb(36, 36, 36);
 }
 
 .footer-subtitle {
@@ -617,7 +553,10 @@ hr {
     .navbar-logo {
         width: 13%;
     }
+
     .hero-section {
+        display: flex;
+        width: 100%;
         padding: 10%;
         margin-top: 22%;
         height: 65vh;
@@ -638,15 +577,6 @@ hr {
         font-size: 100%;
     }
 
-    /* .welcome-badge {
-        width: 110px;
-        position: absolute;
-        right: 20px;
-        top: inherit;
-        left: inherit;
-        bottom: -230px;
-    } */
-
     .technologies-section li {
         color: #d3d3d3;
         font-family: 'Maison Neue Mono';
@@ -655,14 +585,9 @@ hr {
         line-height: 220%;
     }
     
-    .technologies-section {
-        height: 590px;
-    }
-
     .flex-grid {
         display: block;
     }
-
 
     .section-subtitle {
         font-size: 150%;
@@ -670,10 +595,6 @@ hr {
 
     .section-text {
         width: 100%;
-    }
-
-    .projects-section, .in-progress-section, .technologies-section {
-        padding: 20px;
     }
 
     .projects-section p, .in-progress-section p {
@@ -687,7 +608,6 @@ hr {
     }
 
     .about-hero-section {
-        
         padding-top: 150px;
         padding-left: 10%;
         padding-right: 10%;
@@ -697,11 +617,6 @@ hr {
 
     .section-content {
         padding-bottom: 5%;
-    }
-
-    .scroll-down {
-        /* bottom: 130px; */
-        bottom: 1;
     }
 
     .scroll-down p {
@@ -723,8 +638,6 @@ hr {
 }  
 
 @media (min-width: 478px) {
-
-
     .navbar-logo {
         width: 8%;
     }
@@ -759,23 +672,18 @@ hr {
         line-height: 155%;
     }
 
-        
-    .technologies-section {
-        height: 580px;
-    }
-
     .footer {
         padding: 4%;
     }
 }  
 
 @media (min-width: 600px) {
-
     .hero-section {
         padding: 8%;
         margin-top: 120px;
         height: 80vh;
     }
+
     .hero-section h1,
     .section-title {
         font-size: 260%;
@@ -785,14 +693,6 @@ hr {
     .flex-grid {
         display: block;
     }
-
-
-
-    /* .technologies-section li {
-        font-size: 140%;
-        line-height: 170%;
-    } */
-
         
     .technologies-section {
         width: 100%;
@@ -806,7 +706,6 @@ hr {
 
 
     .about-hero-section {
-        
         padding-top: 150px;
         padding-left: 10%;
         padding-right: 10%;
@@ -852,11 +751,6 @@ hr {
         line-height: 135%;
     }
 
-    /* .technologies-section li {
-        font-size: 140%;
-        line-height: 175%;
-    } */
-
     .technologies-section li {
         
         font-family: 'Maison Neue Mono';
@@ -864,9 +758,7 @@ hr {
         line-height: 220%;
     }
     
- 
     .technologies-section {
-        height: 400px;
         width: 100%;
     } 
 
@@ -885,10 +777,6 @@ hr {
     .projects-section p, .in-progress-section p {
         font-size: 100%;
         line-height: 155%;
-    }
-
-    .project-section {
-        height: 900px;
     }
 
     .about-description {
@@ -926,11 +814,6 @@ hr {
     .flex-grid {
         display: flex;
     }
-
-    /* .technologies-section li {
-        font-size: 160%;
-        line-height: 160%;
-    } */
 
     .technologies-section li {
         
